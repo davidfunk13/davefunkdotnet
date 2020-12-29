@@ -1,0 +1,20 @@
+header {
+    width: 100vw;
+    height: 50vh;
+    background-color: green;
+}
+
+.section {
+    width: 100vw;
+    height: auto;
+}
+
+.section__1 {
+    background-color: red;
+    height: 50vh;
+}
+
+.section__2 {
+    background-color: blue;
+    height: 25vh;
+}
