@@ -1,20 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+:root {
+    --header-bg-color: rgb(32, 65, 142);
+    --section-1-bg-color: rgb(39, 41, 50);
+    --section-2-bg-color: rgb(245, 143, 41);
+    --section-3-bg-color: rgb(130, 132, 137);
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color 700ms linear;
+    -webkit-transition: background-color 700ms linear;
+    -moz-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    -o-transition: background-color 700ms linear;
+}
+
+h1 {
+    position: relative;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    color: white;
+    font-size: 6.5em;
+}
+
+h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 header {
+    text-align: center;
     width: 100vw;
-    height: 50vh;
-    background-color: green;
+    height: 100vh;
+    background-color: var(--header-bg-color);
 }
 
 .section {
     width: 100vw;
-    height: auto;
+    height: 100vh;
 }
 
 .section__1 {
-    background-color: red;
-    height: 50vh;
+    background-color: var(--section-1-bg-color);
+    height: 100vh;
 }
 
 .section__2 {
-    background-color: blue;
-    height: 25vh;
+    background-color: var(--section-2-bg-color);
+    height: 100vh;
+}
+
+.section__3 {
+    background-color: var(--section-3-bg-color);
+    height: 100vh;
 }
