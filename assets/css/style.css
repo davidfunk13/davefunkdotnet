@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 :root {
-    --header-bg-color: rgb(32, 65, 142);
-    --section-1-bg-color: rgb(39, 41, 50);
-    --section-2-bg-color: rgb(245, 143, 41);
-    --section-3-bg-color: rgb(130, 132, 137);
+    --section-1-bg-color: rgb(32, 65, 142);
+    --section-2-bg-color: rgb(39, 41, 50);
+    --section-3-bg-color: rgb(245, 143, 41);
+    --section-4-bg-color: rgb(130, 132, 137);
 }
 
 body {
@@ -24,21 +24,6 @@ h1 {
     font-size: 6.5em;
 }
 
-h1::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-header {
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--header-bg-color);
-}
-
 .section {
     width: 100vw;
     height: 100vh;
@@ -56,5 +41,10 @@ header {
 
 .section__3 {
     background-color: var(--section-3-bg-color);
+    height: 100vh;
+}
+
+.section__4 {
+    background-color: var(--section-4-bg-color);
     height: 100vh;
 }
