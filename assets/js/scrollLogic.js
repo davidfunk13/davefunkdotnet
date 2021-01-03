@@ -1,4 +1,5 @@
 //selectors;
+// ALL OF THESE SHOULD BE GENERATED DYNAMICALLY, 
 const sectionOne = document.querySelector('section.section.section__1');
 const sectionTwo = document.querySelector('section.section.section__2');
 const sectionThree = document.querySelector('section.section.section__3');
@@ -7,8 +8,8 @@ const sectionFour = document.querySelector('section.section.section__4');
 // references to top of elements in selectors
 const sectionOneTop = sectionOne.getBoundingClientRect().top;
 const sectionTwoTop = sectionTwo.getBoundingClientRect().top;
-const sectionThreeTop = sectionThree.getBoundingClientRect().top;
-const sectionFourTop = sectionFour.getBoundingClientRect().top;
+// const sectionThreeTop = sectionThree.getBoundingClientRect().top;
+// const sectionFourTop = sectionFour.getBoundingClientRect().top;
 
 // height of document in pixels
 const height = document.body.scrollHeight;
@@ -23,7 +24,7 @@ const sectionFourHeight = sectionOne.getClientRects()[0].height;
 
 //wherever theres and end to a section, we'll subtract a quarter of that
 // sections height to get our animation trigger. 
-const padding = sectionHeight / 4;
+const padding = sectionHeight / 1.2;
 
 //heres where we trigger the animations
 const sectionOneTriggerLocation = sectionHeight - padding;
@@ -36,6 +37,14 @@ window.addEventListener('scroll', function () {
 
     if (currentY >= sectionOneTriggerLocation && currentY < sectionHeight) {
         console.log('section 1');
+        console.log({
+            section1Data: {
+                sectionOneTriggerLocation, sectionTwo, currentY
+            }
+        })
+        const scale = chroma.scale(['rgb(32, 65, 142)', 'rgb(39, 41, 50)']).domain([sectionOneTriggerLocation, sectionHeight]);
+        console.log(scale(currentY));
+        document.body.style.backgroundColor = scale(currentY);
     }
 
     if (currentY >= sectionTwoTriggerLocation && currentY < (sectionHeight * 2)) {
@@ -45,4 +54,10 @@ window.addEventListener('scroll', function () {
     if (currentY >= sectionThreeTriggerLocation && currentY < (sectionHeight * 3)) {
         console.log('section 3');
     }
+});
+
+// resize listener for recalculating
+
+window.addEventListener('resize', function () {
+    console.log({ width: window.innerWidth, height: window.innerHeight, currentY })
 });

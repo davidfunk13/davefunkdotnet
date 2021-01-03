@@ -9,11 +9,7 @@
 
 body {
     font-family: "Lato", sans-serif;
-    transition: background-color 700ms linear;
-    -webkit-transition: background-color 700ms linear;
-    -moz-transition: background-color 700ms linear;
-    -ms-transition: background-color 700ms linear;
-    -o-transition: background-color 700ms linear;
+    background-color: var(--section-1-bg-color);
 }
 
 h1 {
@@ -27,24 +23,5 @@ h1 {
 .section {
     width: 100vw;
     height: 100vh;
-}
-
-.section__1 {
-    background-color: var(--section-1-bg-color);
-    height: 100vh;
-}
-
-.section__2 {
-    background-color: var(--section-2-bg-color);
-    height: 100vh;
-}
-
-.section__3 {
-    background-color: var(--section-3-bg-color);
-    height: 100vh;
-}
-
-.section__4 {
-    background-color: var(--section-4-bg-color);
-    height: 100vh;
+    stroke: 2px dotted white;
 }
