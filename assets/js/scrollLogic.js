@@ -1,76 +1,91 @@
-// these will be picked up dynamically, put in an array so they arent hard coded and respond when i add a new section
-// to the html
-const sectionOne = document.querySelector('section.section.section__1');
-const sectionTwo = document.querySelector('section.section.section__2');
-const sectionThree = document.querySelector('section.section.section__3');
-const sectionFour = document.querySelector('section.section.section__4');
+//all section elements on html documnet
+const sectionSelectors = document.querySelectorAll('section');
+
+// when attributes are assigned to section objects they will end up here
+const sectionCollection = [];
+
+//array of colors for each section, will possibly randomize these and add extras.
+const colors = ['rgb(32, 65, 142)', 'rgb(39, 41, 50)', 'rgb(245, 143, 41)', 'rgb(130, 132, 137)'];
 
 // height of entire document in pixels
 const height = document.body.scrollHeight;
 
-// height ref. int is number of sections. (this will be subbed with sections array.length)
-const sectionHeight = height / 4;
+// just easier to set up sections this way. also might be handy for infividual and all properties.
+class Section {
+    constructor(sectionColor,
+        sectionNextColor,
+        sectionTrigger,
+        sectionNumber,
+        sectionStart,
+        sectionEnd,
+        sectionTransitionScale
+    ) {
+        this.sectionColor = sectionColor;
+        this.sectionNextColor = sectionNextColor;
+        this.sectionTrigger = sectionTrigger;
+        this.sectionNumber = sectionNumber;
+        this.sectionStart = sectionStart;
+        this.sectionEnd = sectionEnd;
+        this.sectionTransitionScale = sectionTransitionScale;
+    }
+}
 
-//these represent the end of each section, will also be generated dynamcially from sections array.
-const endOfSectionOne = sectionHeight;
-const endOfSectionTwo = (sectionHeight * 2);
-const endOfSectionThree = (sectionHeight * 3);
+// height ref. int is number of sections. (this will be subbed with sections array.length)
+const sectionHeight = height / sectionSelectors.length;
 
 // isolate the last third of a given sections height, or half or quarter whatever in pixels. 
 const padding = sectionHeight / 3;
 
-//heres where we trigger the animations. subtracting the padding variable from the section gives us
-// a location to trigger the start of the background fade in pixels
-const sectionOneTrigger = endOfSectionOne - padding;
-const sectionTwoTrigger = endOfSectionTwo - padding;
-const sectionThreeTrigger = endOfSectionThree - padding;
+//on page load we create our sections from the markup.
+function generateSections() {
+    if (!sectionSelectors) {
+        console.error('no sections found.');
+    }
 
+    sectionSelectors.forEach((section, i) => {
+        //implement random colors by randomizing array itself, then padding those in.;
+        const sectionColor = colors[i];
+        const sectionNextColor = colors[i + 1] || 'rgb(255, 255, 255)';
+        const sectionTrigger = sectionHeight * (i + 1) - padding;
+        const sectionNumber = i + 1;
+        const sectionStart = sectionHeight * i;
+        const sectionEnd = sectionHeight * (i + 1);
+        const sectionTransitionScale = chroma.scale([sectionColor, sectionNextColor]).domain([sectionTrigger, sectionEnd]);
+
+        const newSection = new Section(sectionColor, sectionNextColor, sectionTrigger, sectionNumber, sectionStart, sectionEnd, sectionTransitionScale);
+        sectionCollection.push(newSection);
+    });
+
+}
+
+// this function will be called by an event listener boud to scrolling. It will iterate through the sections 
+// tofigure out where we are and what color our background should be;
 function changeBackgroundColor() {
     const currentY = window.pageYOffset;
 
-    console.log({ currentY, sectionTwoTrigger, endOfSectionTwo });
+    sectionCollection.map((section, i) => {
+        console.log({
+            currentY,
+            start: section.sectionStart,
+            end: section.sectionEnd,
+            trigger: section.sectionTrigger
+        });
 
-    //first section
-    if (currentY < sectionOneTrigger) {
-        document.body.style.backgroundColor = 'rgb(32, 65, 142)';
-    }
+        if (currentY <= section.sectionEnd && currentY >= section.sectionTrigger) {
+            console.log('hit');
+            const scale = chroma.scale([section.sectionColor, section.sectionNextColor]).domain([section.sectionTrigger, section.sectionEnd]);
 
-    if (currentY < endOfSectionOne && currentY > sectionOneTrigger) {
-        const scale = chroma.scale(['rgb(32, 65, 142)', 'rgb(39, 41, 50)']).domain([sectionOneTrigger, sectionHeight]);
+            return document.body.style.backgroundColor = scale(currentY);
+        }
 
-        document.body.style.backgroundColor = scale(currentY);
-    }
+    });
 
-    if (currentY > endOfSectionOne && currentY < sectionTwoTrigger) {
-        document.body.style.backgroundColor = `rgb(39, 41, 50)`;
-    }
-
-    if (currentY < endOfSectionTwo && currentY > sectionTwoTrigger) {
-        const scale = chroma.scale(['rgb(39,41,50)', 'rgb(245, 143, 41)']).domain([sectionTwoTrigger, (sectionHeight * 2)]);
-        document.body.style.backgroundColor = scale(currentY);
-    }
-
-    if (currentY > endOfSectionTwo && currentY < sectionThreeTrigger) {
-        document.body.style.backgroundColor = `rgb(245, 143, 41)`;
-    }
-
-    if (currentY < endOfSectionThree && currentY > sectionThreeTrigger) {
-        const scale = chroma.scale(['rgb(245, 143, 41)', 'rgb(130, 132, 137)']).domain([sectionThreeTrigger, (sectionHeight * 3)]);
-        document.body.style.backgroundColor = scale(currentY);
-    }
 };
 
-window.onload = function () {
-    console.log('loaded')
-    changeBackgroundColor();
-}
+generateSections();
+
+changeBackgroundColor();
 
 window.addEventListener('scroll', function () {
-    console.log('scroll')
-    changeBackgroundColor()
+    changeBackgroundColor();
 });
-
-// resize listener for recalculating
-// window.addEventListener('resize', function () {
-//     console.log({ width: window.innerWidth, height: window.innerHeight, currentY })
-// });
