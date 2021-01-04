@@ -1,63 +1,76 @@
-//selectors;
-// ALL OF THESE SHOULD BE GENERATED DYNAMICALLY, 
+// these will be picked up dynamically, put in an array so they arent hard coded and respond when i add a new section
+// to the html
 const sectionOne = document.querySelector('section.section.section__1');
 const sectionTwo = document.querySelector('section.section.section__2');
 const sectionThree = document.querySelector('section.section.section__3');
 const sectionFour = document.querySelector('section.section.section__4');
 
-// references to top of elements in selectors
-const sectionOneTop = sectionOne.getBoundingClientRect().top;
-const sectionTwoTop = sectionTwo.getBoundingClientRect().top;
-// const sectionThreeTop = sectionThree.getBoundingClientRect().top;
-// const sectionFourTop = sectionFour.getBoundingClientRect().top;
-
-// height of document in pixels
+// height of entire document in pixels
 const height = document.body.scrollHeight;
 
-// height refs, unecessary, but makes me feel safer than 
-// dividing total height by four
+// height ref. int is number of sections. (this will be subbed with sections array.length)
 const sectionHeight = height / 4;
-const sectionOneHeight = sectionOne.getClientRects()[0].height;
-const sectionTwoHeight = sectionOne.getClientRects()[0].height;
-const sectionThreeHeight = sectionOne.getClientRects()[0].height;
-const sectionFourHeight = sectionOne.getClientRects()[0].height;
 
-//wherever theres and end to a section, we'll subtract a quarter of that
-// sections height to get our animation trigger. 
-const padding = sectionHeight / 1.2;
+//these represent the end of each section, will also be generated dynamcially from sections array.
+const endOfSectionOne = sectionHeight;
+const endOfSectionTwo = (sectionHeight * 2);
+const endOfSectionThree = (sectionHeight * 3);
 
-//heres where we trigger the animations
-const sectionOneTriggerLocation = sectionHeight - padding;
-const sectionTwoTriggerLocation = (sectionHeight * 2) - padding;
-const sectionThreeTriggerLocation = (sectionHeight * 3) - padding;
-const sectionFourTriggerLocation = (sectionHeight * 4) - padding;
+// isolate the last third of a given sections height, or half or quarter whatever in pixels. 
+const padding = sectionHeight / 3;
 
-window.addEventListener('scroll', function () {
+//heres where we trigger the animations. subtracting the padding variable from the section gives us
+// a location to trigger the start of the background fade in pixels
+const sectionOneTrigger = endOfSectionOne - padding;
+const sectionTwoTrigger = endOfSectionTwo - padding;
+const sectionThreeTrigger = endOfSectionThree - padding;
+
+function changeBackgroundColor() {
     const currentY = window.pageYOffset;
 
-    if (currentY >= sectionOneTriggerLocation && currentY < sectionHeight) {
-        console.log('section 1');
-        console.log({
-            section1Data: {
-                sectionOneTriggerLocation, sectionTwo, currentY
-            }
-        })
-        const scale = chroma.scale(['rgb(32, 65, 142)', 'rgb(39, 41, 50)']).domain([sectionOneTriggerLocation, sectionHeight]);
-        console.log(scale(currentY));
+    console.log({ currentY, sectionTwoTrigger, endOfSectionTwo });
+
+    //first section
+    if (currentY < sectionOneTrigger) {
+        document.body.style.backgroundColor = 'rgb(32, 65, 142)';
+    }
+
+    if (currentY < endOfSectionOne && currentY > sectionOneTrigger) {
+        const scale = chroma.scale(['rgb(32, 65, 142)', 'rgb(39, 41, 50)']).domain([sectionOneTrigger, sectionHeight]);
+
         document.body.style.backgroundColor = scale(currentY);
     }
 
-    if (currentY >= sectionTwoTriggerLocation && currentY < (sectionHeight * 2)) {
-        console.log('section 2');
+    if (currentY > endOfSectionOne && currentY < sectionTwoTrigger) {
+        document.body.style.backgroundColor = `rgb(39, 41, 50)`;
     }
 
-    if (currentY >= sectionThreeTriggerLocation && currentY < (sectionHeight * 3)) {
-        console.log('section 3');
+    if (currentY < endOfSectionTwo && currentY > sectionTwoTrigger) {
+        const scale = chroma.scale(['rgb(39,41,50)', 'rgb(245, 143, 41)']).domain([sectionTwoTrigger, (sectionHeight * 2)]);
+        document.body.style.backgroundColor = scale(currentY);
     }
+
+    if (currentY > endOfSectionTwo && currentY < sectionThreeTrigger) {
+        document.body.style.backgroundColor = `rgb(245, 143, 41)`;
+    }
+
+    if (currentY < endOfSectionThree && currentY > sectionThreeTrigger) {
+        const scale = chroma.scale(['rgb(245, 143, 41)', 'rgb(130, 132, 137)']).domain([sectionThreeTrigger, (sectionHeight * 3)]);
+        document.body.style.backgroundColor = scale(currentY);
+    }
+};
+
+window.onload = function () {
+    console.log('loaded')
+    changeBackgroundColor();
+}
+
+window.addEventListener('scroll', function () {
+    console.log('scroll')
+    changeBackgroundColor()
 });
 
 // resize listener for recalculating
-
-window.addEventListener('resize', function () {
-    console.log({ width: window.innerWidth, height: window.innerHeight, currentY })
-});
+// window.addEventListener('resize', function () {
+//     console.log({ width: window.innerWidth, height: window.innerHeight, currentY })
+// });

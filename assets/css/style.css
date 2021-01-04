@@ -9,19 +9,36 @@
 
 body {
     font-family: "Lato", sans-serif;
-    background-color: var(--section-1-bg-color);
 }
 
-h1 {
-    position: relative;
+h1,h2,h3,h4,h5,h6 {
     font-family: Montserrat;
     text-transform: uppercase;
     color: white;
-    font-size: 6.5em;
+}
+
+h1 {
+    font-size: 5.5em;
+}
+
+h2 {
+    font-size: 2.5em;
 }
 
 .section {
     width: 100vw;
     height: 100vh;
-    stroke: 2px dotted white;
+    max-width: 100vw;
+    max-height: 100vh;
+    /* border: 2px dotted black; */
+}
+
+section > .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
