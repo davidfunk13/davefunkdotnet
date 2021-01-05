@@ -2,20 +2,26 @@
 
 body {
     font-family: "Lato", sans-serif;
+    font-size: 100%;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Montserrat;
     text-transform: uppercase;
     color: white;
 }
 
-h1 {
-    font-size: 3em;
+h2 {
+    font-size: 1.2em;
 }
 
-h2 {
-    font-size: 1.5em;
+h3 {
+    font-size: .6em;
 }
 
 p {
@@ -29,7 +35,7 @@ p {
     max-height: 100vh;
 }
 
-section > .container {
+section>.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,3 +44,97 @@ section > .container {
     align-content: center;
     align-items: center;
 }
+
+section.section>.container>* {
+    margin-bottom: 2%;
+}
+
+.svg-heading {
+    width: 60%;
+}
+
+.svg-heading rect {
+    stroke: white;
+    fill: transparent;
+    stroke-width: 2.5%;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.svg-heading text {
+    stroke: white;
+    fill: transparent;
+    stroke-width: 1px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 8.5em;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+    width: 100%;
+    height: 100%;
+}
+
+.drawRect {
+    animation: drawRect 2s ease-out .5s 1 normal forwards;
+}
+
+.drawText {
+    animation: drawText 3s ease-in 1s 1 normal forwards,
+        fadeInText 2s ease 2.4s 1 normal forwards,
+        fadeOutStroke 2s ease 2.4s 1 normal forwards
+}
+
+@keyframes drawRect {
+    from {
+        stroke-dashoffset: 2500;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawText {
+    from {
+        stroke-dashoffset: 2500;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+    }
+}
+
+@keyframes fadeOutStroke {
+    0% {
+        stroke: white;
+        font-weight: normal;
+    }
+
+    to {
+        stroke: transparent;
+    }
+}
+
+@media screen and (min-width: 500px) {}
+
+@media screen and (min-width: 800px) {}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 1280px) {}
+
+@media screen and (min-width: 1440px) {}
