@@ -2,7 +2,7 @@
 
 body {
     font-family: "Lato", sans-serif;
-    font-size: 100%;
+    font-size: 16px;
 }
 
 h1,
@@ -17,7 +17,7 @@ h6 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: .75em;
 }
 
 h3 {
@@ -45,12 +45,16 @@ section>.container {
     align-items: center;
 }
 
-section.section>.container>* {
-    margin-bottom: 2%;
+section.section>.container>svg {
+    margin-bottom: .5em;
+}
+
+section.section>.container>h2 {
+    margin-bottom: .5%;
 }
 
 .svg-heading {
-    width: 60%;
+    width: 85%;
 }
 
 .svg-heading rect {
