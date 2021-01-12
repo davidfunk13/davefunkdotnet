@@ -88,8 +88,8 @@ section.section>.container>h2 {
 
 .drawText {
     animation: drawText 3s ease-in 1s 1 normal forwards,
-        fadeInText 2s ease 2.4s 1 normal forwards,
-        fadeOutStroke 2s ease 2.4s 1 normal forwards
+        /* fadeInText 2s ease 2.4s 1 normal forwards, */
+        /* fadeOutStroke 2s ease 2.4s 1 normal forwards */
 }
 
 @keyframes drawRect {

@@ -68,10 +68,10 @@ function drawTitle(el) {
     const rectPathLength = rect.getTotalLength();
     // const textPathLength = title
 
-    console.log({ startTrigger, currentY, getEndTrigger, rectPathLength, textPathLength });
-
     if (currentY >= startTrigger) {
-
+        const value = drawSvg(currentY, startTrigger, getEndTrigger, 1900, 2500);
+        console.log(value)
+        title.style.strokeDashoffset = value;
     }
 }
 
