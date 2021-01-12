@@ -1,6 +1,3 @@
-//all section elements on html documnet
-const sectionSelectors = document.querySelectorAll('section');
-
 // when attributes are assigned to section objects they will end up here
 const sectionCollection = [];
 
@@ -17,5 +14,28 @@ const sectionHeight = height / sectionSelectors.length;
 // isolate the last third of a given sections height, or half or quarter whatever in pixels. 
 const padding = sectionHeight / 3;
 
+//position
+const titleOnePosition = getElementY(titleOne);
+const titleTwoPosition = getElementY(titleTwo);
+const titleThreePosition = getElementY(titleThree);
+const titleFourPosition = getElementY(titleFour);
 
+//dash
+const titleStrokeOffsetStart = 2500;
+const titleStrokeOffsetEnd = 0;
 
+//drawTitle options 
+const drawTitleStartPadding = 500;
+const drawTitleEndPadding = 300;
+
+let hasT2RectClass = false;
+let hasT2TextClass = false;
+let hasT3RectClass = false;
+let hasT3TextClass = false;
+let hasT4RectClass = false;
+let hasT4TextClass = false;
+
+const drawTitleTwoOptions = {
+    startY: titleTwoPosition - drawTitleStartPadding,
+    endY: titleTwoPosition + drawTitleEndPadding,
+};

@@ -55,23 +55,60 @@ function changeBackgroundColor() {
 function getElementY(el) {
     var bodyRect = document.body.getBoundingClientRect();
     var elemRect = el.getBoundingClientRect();
-
-    return Math.round(elemRect.top - bodyRect.top);
+    return elemRect.top - bodyRect.top;
 }
 
-function drawTitle(el) {
-    const currentY = window.pageYOffset || window.scrollY;
-    const title = el.querySelector('text');
-    const rect = el.querySelector('rect');
-    const startTrigger = getElementY(el) - 50;
-    const getEndTrigger = getElementY(el) + Math.round(el.getBoundingClientRect().height) + 100;
-    const rectPathLength = rect.getTotalLength();
-    // const textPathLength = title
+function drawTitle(el, options) {
+    const text = el.children[0].querySelector('svg').querySelector('text');
+    const rect = el.children[0].querySelector('svg').querySelector('rect');
 
-    if (currentY >= startTrigger) {
-        const value = drawSvg(currentY, startTrigger, getEndTrigger, 1900, 2500);
-        console.log(value)
-        title.style.strokeDashoffset = value;
+    const { startY, endY } = options;
+
+    const currentY = window.pageYOffset || window.scrollY;
+
+    console.log({ hasT2TextClass, hasT2RectClass })
+
+    if (currentY <= startY && currentY <= endY) {
+        if (hasT2RectClass) {
+            rect.classList.remove('drawRect');
+            rect.classList.add('drawRectOut');
+            hasT2RectClass = false;
+        }
+
+        if (hasT2TextClass) {
+            text.classList.remove('drawText')
+            text.classList.add('drawTextOut')
+            hasT2TextClass = false;
+        }
+    }
+
+    if (currentY >= startY && currentY <= endY) {
+        if (!hasT2RectClass) {
+            rect.classList.remove('drawRectOut');
+            rect.classList.add('drawRect');
+            console.log('hit')
+            hasT2RectClass = true;
+        }
+
+        if (!hasT2TextClass) {
+            text.classList.remove('drawTextOut')
+            text.classList.add('drawText')
+            hasT2TextClass = true;
+        }
+    }
+
+    if (currentY >= startY && currentY >= endY) {
+        if (hasT2RectClass) {
+            rect.classList.remove('drawRect');
+            rect.classList.add('drawRectOut');
+            hasT2RectClass = false;
+        }
+
+        if (hasT2TextClass) {
+            text.classList.remove('drawText')
+            text.classList.add('drawTextOut')
+            hasT2TextClass = false;
+        }
     }
 }
 

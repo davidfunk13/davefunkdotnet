@@ -82,14 +82,37 @@ section.section>.container>h2 {
     height: 100%;
 }
 
+section:nth-of-type(n+1) .svg-heading text {
+    stroke: white;
+    fill: transparent;
+    stroke-width: 1px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 8.5em;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+    width: 100%;
+    height: 100%;
+}
+
 .drawRect {
     animation: drawRect 2s ease-out .5s 1 normal forwards;
 }
 
+.drawRectOut {
+    animation: drawRectOut 2s ease-out .5s 1 normal forwards;
+}
+
 .drawText {
     animation: drawText 3s ease-in 1s 1 normal forwards,
-        /* fadeInText 2s ease 2.4s 1 normal forwards, */
-        /* fadeOutStroke 2s ease 2.4s 1 normal forwards */
+        fadeInText 2s ease 2.4s 1 normal forwards,
+        fadeOutStroke 2s ease 2.4s 1 normal forwards
+}
+
+.drawTextOut {
+    animation: drawTextOut 3s ease-in 1s 1 normal forwards,
+        fadeInTextOut 2s ease 2.4s 1 normal forwards,
+        fadeOutStrokeOut 2s ease 2.4s 1 normal forwards
 }
 
 @keyframes drawRect {
@@ -99,6 +122,16 @@ section.section>.container>h2 {
 
     to {
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawRectOut {
+    from {
+        stroke-dashoffset: 5000;
+    }
+
+    to {
+        stroke-dashoffset: 25000;
     }
 }
 
@@ -112,6 +145,16 @@ section.section>.container>h2 {
     }
 }
 
+@keyframes drawTextOut {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 2500;
+    }
+}
+
 @keyframes fadeInText {
     from {
         fill: transparent;
@@ -119,6 +162,27 @@ section.section>.container>h2 {
 
     to {
         fill: white;
+    }
+}
+
+@keyframes fadeOutText {
+    from {
+        fill: white;
+    }
+
+    to {
+        fill: transparent;
+    }
+}
+
+@keyframes fadeInStroke {
+    0% {
+        stroke: transparent;
+    }
+
+    to {
+        stroke: white;
+        font-weight: normal;
     }
 }
 
