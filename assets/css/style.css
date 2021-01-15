@@ -62,45 +62,33 @@ section.section>.container>h2 {
     fill: transparent;
     stroke-width: 2.5%;
     stroke-dasharray: 2500;
-    stroke-dashoffset: 2500;
+    stroke-dashoffset: 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    transition: all 2s;
 }
 
 .svg-heading text {
     stroke: white;
-    fill: transparent;
+    fill: white;
     stroke-width: 1px;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
     font-family: Montserrat;
     text-transform: uppercase;
     font-size: 8.5em;
-    stroke-dasharray: 2500;
-    stroke-dashoffset: 2500;
-    width: 100%;
-    height: 100%;
-}
-
-section:nth-of-type(n+1) .svg-heading text {
-    stroke: white;
-    fill: transparent;
-    stroke-width: 1px;
-    font-family: Montserrat;
-    text-transform: uppercase;
-    font-size: 8.5em;
-    stroke-dasharray: 2500;
-    stroke-dashoffset: 2500;
     width: 100%;
     height: 100%;
 }
 
 .drawRect {
-    animation: drawRect 2s ease-out .5s 1 normal forwards;
+    stroke-dashoffset: 0;
 }
 
 .drawRectOut {
-    animation: drawRectOut 2s ease-out .5s 1 normal forwards;
+    animation: drawRectOut 2s ease-out .5s 1 backwards reverse;
 }
 
 .drawText {
@@ -111,8 +99,8 @@ section:nth-of-type(n+1) .svg-heading text {
 
 .drawTextOut {
     animation: drawTextOut 3s ease-in 1s 1 normal forwards,
-        fadeInTextOut 2s ease 2.4s 1 normal forwards,
-        fadeOutStrokeOut 2s ease 2.4s 1 normal forwards
+        fadeOutText 2s ease 2.4s 1 normal forwards,
+        fadeOutStroke 2s ease 2.4s 1 normal forwards
 }
 
 @keyframes drawRect {
@@ -127,11 +115,11 @@ section:nth-of-type(n+1) .svg-heading text {
 
 @keyframes drawRectOut {
     from {
-        stroke-dashoffset: 5000;
+        stroke-dashoffset: 0;
     }
 
     to {
-        stroke-dashoffset: 25000;
+        stroke-dashoffset: 2500;
     }
 }
 
