@@ -7,7 +7,7 @@ const colors = ['rgb(32, 65, 142)', 'rgb(39, 41, 50)', 'rgb(245, 143, 41)', 'rgb
 // height of entire document in pixels
 // const height = document.body.scrollHeight;
 const height = (document.height !== undefined) ? document.height : document.body.offsetHeight;
-
+console.log({ height })
 // height ref. int is number of sections. (this will be subbed with sections array.length)
 const sectionHeight = height / sectionSelectors.length;
 
