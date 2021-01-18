@@ -12,37 +12,11 @@
 /* end centered arrow */
 
 .section {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
-}
-
-/* section one structure */
-
-section.section.section__1> .content>* {
-    margin-bottom: var(--margin-sm);
-}
-
-section.section.section__1>.content {
-    text-align: center;
-}
-
-section.section>svg {
-    margin-bottom: .5em;
-}
-
-section.section>h2 {
-    margin-bottom: .5%;
-}
-
-.svg-heading {
-    width: 85%;
 }
 
 .icon {

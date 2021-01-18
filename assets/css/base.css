@@ -24,6 +24,7 @@ strong {
 
 h2 {
     font-size: var(--h2-sizing);
+    letter-spacing: 2px;
 }
 
 h3 {
@@ -33,18 +34,25 @@ h3 {
 p {
     color: var(--default-font-color);
     font-size: var(--paragraph-size);
-    line-height: 1.25;
-
+    line-height: 1.4;
+    letter-spacing: 1px;
 }
 
 /* end setup */
 
 /* layout components */
+.title-block {
+    width: var(--content-width-mobile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: var(--content-width-mobile);
 }
 
 .card {
@@ -69,8 +77,10 @@ p {
 
 .icon-row {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    /* flex-direction: row-reverse; */
+    justify-content: space-evenly;
+    width: var(--content-width-mobile);
+    max-width: 85vw;
 }
 
 .icon-row>* {

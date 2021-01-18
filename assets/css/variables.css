@@ -5,11 +5,12 @@
     --default-font-family: "Lato", sans-serif;
     --default-font-color: white;
     --heading-font-family: Montserrat;
-    --h2-sizing: .9em;
+    --h2-sizing: 1.2em;
     --h3-sizing: .7em;
-    --paragraph-size: .7em;
+    --paragraph-size: .9em;
     --arrow-max-height-sm: 5vh;
     --arrow-max-height-lg: 7vh;
     --margin-xs: .5em;
     --margin-sm: .5em;
+    --content-width-mobile: 85vw;
 }
