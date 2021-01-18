@@ -49,6 +49,10 @@ p {
     align-items: center;
 }
 
+.title-block > * {
+    margin-bottom: var(--margin-sm);
+}
+
 .content {
     display: flex;
     flex-wrap: wrap;
