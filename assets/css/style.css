@@ -19,6 +19,10 @@
     align-items: center;
 }
 
+section:not(.section__1) > .title-block{
+    margin-top: 10%;
+}
+
 .icon {
     height: auto;
     width: 15vw;

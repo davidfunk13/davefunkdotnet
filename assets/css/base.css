@@ -42,6 +42,9 @@ p {
 /* end setup */
 
 /* layout components */
+
+/* title block */
+
 .title-block {
     width: var(--content-width-mobile);
     display: flex;
@@ -53,6 +56,10 @@ p {
     margin-bottom: var(--margin-sm);
 }
 
+/* end title block */
+
+/* content block horiz center wrap bottom margin xl */
+
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -63,6 +70,10 @@ p {
 .content > * {
     margin-bottom: var(--margin-xlg);
 }
+
+/* end content block wrap bottom margin xl */
+
+/* card wrap horiz vert center 3:1 reverse option */
 
 .card {
     display: flex;
@@ -81,8 +92,14 @@ p {
 }
 
 .card>*:first-child {
+    width: 33%;
     flex: 1;
 }
+
+/* end card wrap horiz vert center 3:1 reverse option */
+
+
+/* icon row space evenly option third */
 
 .icon-row {
     display: flex;
@@ -92,8 +109,16 @@ p {
 }
 
 .icon-row>* {
-    margin: var(--margin-xs)
+    margin: var(--margin-xs);
 }
+
+.icon-row> .third {
+    width: 33%;
+}
+
+/* end icon row space evenly option third */
+
+/* icon with label column horiz vert center */
 
 .icon-with-label {
     display: flex;
@@ -105,5 +130,7 @@ p {
 .icon-with-label> :first-child {
     margin-bottom: var(--margin-sm);
 }
+
+/* end icon with label column horiz vert center */
 
 /* end layout components */
