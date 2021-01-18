@@ -10,7 +10,15 @@
     --paragraph-size: .9em;
     --arrow-max-height-sm: 5vh;
     --arrow-max-height-lg: 7vh;
-    --margin-xs: .5em;
+    --margin-xs: .25em;
     --margin-sm: .5em;
+    --margin-md: .75em;
+    --margin-lg: 1em;
+    --margin-xlg: 1.25em;
+    --padding-xs: .25em;
+    --padding-sm: .5em;
+    --padding-md: .75em;
+    --padding-lg: 1em;
+    --padding-xlg: 1.25em;
     --content-width-mobile: 85vw;
 }

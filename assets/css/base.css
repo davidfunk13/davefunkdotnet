@@ -25,6 +25,7 @@ strong {
 h2 {
     font-size: var(--h2-sizing);
     letter-spacing: 2px;
+    margin-bottom: var(--margin-xs);
 }
 
 h3 {
@@ -55,6 +56,10 @@ p {
     width: var(--content-width-mobile);
 }
 
+.content > * {
+    margin-bottom: var(--margin-xlg);
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +72,7 @@ p {
 }
 
 .card>* {
-    margin: var(--margin-sm);
+    margin: var(--margin-xs);
     flex: 3;
 }
 
@@ -77,7 +82,6 @@ p {
 
 .icon-row {
     display: flex;
-    /* flex-direction: row-reverse; */
     justify-content: space-evenly;
     width: var(--content-width-mobile);
     max-width: 85vw;
