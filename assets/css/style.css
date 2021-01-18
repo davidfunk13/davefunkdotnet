@@ -30,24 +30,42 @@ section:not(.section__1) > .title-block{
     color: white;
 }
 
-.icon.user {
+.icon-sm {
+    height: auto;
+    width: 7.5vw;
+    fill: white;
+    color: white;
+}
+
+.user {
     content: url('../svg/user.svg');
 }
 
-.icon.nodejs {
+.nodejs {
     content: url('../svg/nodejs.svg');
 }
 
-.icon.react {
+.react {
     content: url('../svg/react.svg');
 }
 
-.icon.javascript {
+.javascript {
     content: url('../svg/javascript.svg');
 }
 
-.icon.typescript {
+.typescript {
     content: url('../svg/typescript.svg');
+}
+
+.graphql {
+    content: url('../svg/graphql.svg');
+}
+
+.mysql {
+    content: url('../svg/mysql.svg');
+}
+.mongodb {
+    content: url('../svg/mongodb_original_wordmark_logo_icon_146425.svg');
 }
 
 .svg-heading rect {
