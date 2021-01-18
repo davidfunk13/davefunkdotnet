@@ -1,51 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Montserrat;
-    text-transform: uppercase;
-    color: white;
-}
-
-h2 {
-    font-size: .75em;
-}
-
-h3 {
-    font-size: .6em;
-}
-
-p {
-    color: white;
-}
+/* centered arrow  */
 
 .arrow {
-    max-height: 4em;
+    max-height: var(--arrow-max-height-lg);
 }
+
+.anchor{
+    width: 100%;
+}
+
+/* end centered arrow */
 
 .section {
     width: 100vw;
     height: 100vh;
     max-width: 100vw;
     min-height: 100vh;
-}
-
-section>.container {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,16 +23,53 @@ section>.container {
     align-items: center;
 }
 
-section.section>.container>svg {
+/* section one structure */
+
+section.section.section__1> .content>* {
+    margin-bottom: var(--margin-sm);
+}
+
+section.section.section__1>.content {
+    text-align: center;
+}
+
+section.section>svg {
     margin-bottom: .5em;
 }
 
-section.section>.container>h2 {
+section.section>h2 {
     margin-bottom: .5%;
 }
 
 .svg-heading {
     width: 85%;
+}
+
+.icon {
+    height: auto;
+    width: 15vw;
+    fill: white;
+    color: white;
+}
+
+.icon.user {
+    content: url('../svg/user.svg');
+}
+
+.icon.nodejs {
+    content: url('../svg/nodejs.svg');
+}
+
+.icon.react {
+    content: url('../svg/react.svg');
+}
+
+.icon.javascript {
+    content: url('../svg/javascript.svg');
+}
+
+.icon.typescript {
+    content: url('../svg/typescript.svg');
 }
 
 .svg-heading rect {
@@ -90,115 +97,3 @@ section.section>.container>h2 {
     width: 100%;
     height: 100%;
 }
-
-.drawRect {
-    stroke-dashoffset: 0;
-}
-
-.drawRectOut {
-    animation: drawRectOut 2s ease-out .5s 1 backwards reverse;
-}
-
-.drawText {
-    animation: drawText 3s ease-in 1s 1 normal forwards,
-        fadeInText 2s ease 2.4s 1 normal forwards,
-        fadeOutStroke 2s ease 2.4s 1 normal forwards
-}
-
-.drawTextOut {
-    animation: drawTextOut 3s ease-in 1s 1 normal forwards,
-        fadeOutText 2s ease 2.4s 1 normal forwards,
-        fadeOutStroke 2s ease 2.4s 1 normal forwards
-}
-
-@keyframes drawRect {
-    from {
-        stroke-dashoffset: 2500;
-    }
-
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes drawRectOut {
-    from {
-        stroke-dashoffset: 0;
-    }
-
-    to {
-        stroke-dashoffset: 2500;
-    }
-}
-
-@keyframes drawText {
-    from {
-        stroke-dashoffset: 2500;
-    }
-
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes drawTextOut {
-    from {
-        stroke-dashoffset: 0;
-    }
-
-    to {
-        stroke-dashoffset: 2500;
-    }
-}
-
-@keyframes fadeInText {
-    from {
-        fill: transparent;
-    }
-
-    to {
-        fill: white;
-    }
-}
-
-@keyframes fadeOutText {
-    from {
-        fill: white;
-    }
-
-    to {
-        fill: transparent;
-    }
-}
-
-@keyframes fadeInStroke {
-    0% {
-        stroke: transparent;
-    }
-
-    to {
-        stroke: white;
-        font-weight: normal;
-    }
-}
-
-@keyframes fadeOutStroke {
-    0% {
-        stroke: white;
-        font-weight: normal;
-    }
-
-    to {
-        stroke: transparent;
-    }
-}
-
-@media screen and (min-width: 500px) {}
-
-@media screen and (min-width: 800px) {}
-
-@media screen and (min-width: 1024px) {}
-
-@media screen and (min-width: 1280px) {}
-
-@media screen and (min-width: 1440px) {}

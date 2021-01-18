@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+:root {
+    --default-font-size: 16px;
+    --default-font-family: "Lato", sans-serif;
+    --default-font-color: white;
+    --heading-font-family: Montserrat;
+    --h2-sizing: .9em;
+    --h3-sizing: .7em;
+    --paragraph-size: .7em;
+    --arrow-max-height-sm: 5vh;
+    --arrow-max-height-lg: 7vh;
+    --margin-xs: .5em;
+    --margin-sm: .5em;
+}
