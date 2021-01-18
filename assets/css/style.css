@@ -20,7 +20,7 @@
 }
 
 section:not(.section__1) > .title-block{
-    margin-top: 10%;
+    margin-top: var(--margin-sm);
 }
 
 .icon {
