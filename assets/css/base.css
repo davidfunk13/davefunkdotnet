@@ -33,6 +33,10 @@ h3 {
     font-size: var(--h3-sizing);
 }
 
+h4 {
+    font-size: var(--h4-sizing);
+}
+
 p {
     color: var(--default-font-color);
     font-size: var(--paragraph-size);
