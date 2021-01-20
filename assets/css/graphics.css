@@ -1,42 +1,3 @@
-
-/* centered arrow  */
-
-.arrow {
-    max-height: var(--arrow-max-height-lg);
-}
-
-.anchor{
-    width: 100%;
-}
-
-/* end centered arrow */
-
-.section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-section:not(.section__1) > .title-block{
-    margin-top: var(--margin-sm);
-}
-
-.icon {
-    height: auto;
-    width: 15vw;
-    fill: white;
-    color: white;
-}
-
-.icon-sm {
-    height: auto;
-    width: 7.5vw;
-    fill: white;
-    color: white;
-}
-
 .user {
     content: url('../svg/user.svg');
 }
@@ -64,8 +25,21 @@ section:not(.section__1) > .title-block{
 .mysql {
     content: url('../svg/mysql.svg');
 }
+
 .mongodb {
-    content: url('../svg/mongodb_original_wordmark_logo_icon_146425.svg');
+    content: url('../svg/mongodb.svg');
+}
+
+.sr-screenshot-1 {
+    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-2.png');
+}
+
+.sr-screenshot-2 {
+    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-3.png');
+}
+
+.sr-screenshot-3 {
+    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-4.png');
 }
 
 .svg-heading rect {

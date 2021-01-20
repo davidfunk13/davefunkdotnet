@@ -1,13 +1,35 @@
-@media screen and (max-width: 1440px) {}
+@media screen and (max-width: 1440px) {
+    body{
+        width: 65vw;
+    }
+}
 
-@media screen and (max-width: 1280px) {}
+@media screen and (max-width: 1280px) {
+    body{
+        width: 75vw;
+    }
+}
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+ 
+}
 
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 800px) {
+    .portfolio-row {
+        flex-direction: column;
+    }
+}
 
 @media screen and (max-width: 500px) {
     .arrow {
         max-height: var(--arrow-max-height-sm);
+    }
+    .portfolio-item > :first-child {
+        flex: unset;
+    }
+
+    .portfolio-item .screenshot {
+        width: auto;
+        max-height: 10em;
     }
 }

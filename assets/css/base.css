@@ -1,5 +1,4 @@
 /* setup */
-
 html {
     scroll-behavior: smooth;
 }
@@ -7,7 +6,9 @@ html {
 body {
     font-family: var(--default-font-family);
     font-size: var(--default-font-size);
-    color: var(--default-font-color)
+    color: var(--default-font-color);
+    margin: auto;
+    width: var(--content-width-mobile);
 }
 
 h1,
@@ -24,7 +25,7 @@ strong {
 
 h2 {
     font-size: var(--h2-sizing);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: var(--margin-xs);
 }
 
@@ -41,96 +42,14 @@ p {
 
 /* end setup */
 
-/* layout components */
+/* utils */
 
-/* title block */
-
-.title-block {
-    width: var(--content-width-mobile);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.border-radius {
+    border-radius: .5em;
 }
 
-.title-block > * {
-    margin-bottom: var(--margin-sm);
+.full {
+    width: 100%;
 }
 
-/* end title block */
-
-/* content block horiz center wrap bottom margin xl */
-
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: var(--content-width-mobile);
-}
-
-.content > * {
-    margin-bottom: var(--margin-xlg);
-}
-
-/* end content block wrap bottom margin xl */
-
-/* card wrap horiz vert center 3:1 reverse option */
-
-.card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.card.reverse {
-    flex-direction: row-reverse;
-}
-
-.card>* {
-    margin: var(--margin-xs);
-    flex: 3;
-}
-
-.card>*:first-child {
-    width: 33%;
-    flex: 1;
-}
-
-/* end card wrap horiz vert center 3:1 reverse option */
-
-
-/* icon row space evenly option third */
-
-.icon-row {
-    display: flex;
-    justify-content: space-evenly;
-    width: var(--content-width-mobile);
-    max-width: 85vw;
-}
-
-.icon-row>* {
-    margin: var(--margin-xs);
-}
-
-.icon-row> .third {
-    width: 33%;
-}
-
-/* end icon row space evenly option third */
-
-/* icon with label column horiz vert center */
-
-.icon-with-label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon-with-label> :first-child {
-    margin-bottom: var(--margin-sm);
-}
-
-/* end icon with label column horiz vert center */
-
-/* end layout components */
+/* end utils */

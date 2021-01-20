@@ -1,0 +1,167 @@
+/* arrow  */
+.arrow {
+    max-height: var(--arrow-max-height-lg);
+}
+
+/* end arrow */
+
+/* page section */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* end page section */
+
+/* content container */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content>* {
+    margin-bottom: var(--margin-xlg);
+}
+
+.content>.content>* {
+    margin-bottom: var(--margin-xs);
+}
+
+.content>.content {
+    margin-bottom: var(--margin-sm);
+}
+
+/* end content container */
+
+/* UI card item */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+.card>* {
+    margin: var(--margin-xs);
+    flex: 3;
+}
+
+.card>*:first-child {
+    width: 33%;
+    flex: 1;
+}
+
+/* end ui card item */
+
+/* icons */
+.icon {
+    height: auto;
+    width: 15vw;
+    fill: white;
+    color: white;
+}
+
+.icon-xs {
+    height: auto;
+    width: 7vw;
+    fill: white;
+    color: white;
+}
+
+.icon-sm {
+    height: auto;
+    width: 12vw;
+    fill: white;
+    color: white;
+}
+
+.icon-lg {
+    height: auto;
+    width: 25vw;
+    fill: white;
+    color: white;
+}
+
+/* end icons */
+
+/* icon row */
+
+.icon-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icon-row>* {
+    margin: var(--margin-xs);
+}
+
+.icon-row>.third {
+    width: 33%;
+}
+
+/* end icon row */
+
+/* icon with label column horiz vert center */
+.icon-with-label>strong {
+    text-align: center;
+}
+
+.icon-with-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-with-label> :first-child {
+    margin-bottom: var(--margin-sm);
+}
+
+/* end icon with label column horiz vert center */
+
+/* screenshot sizing */
+
+.screenshot {
+    width: 100%;
+    height: auto;
+}
+
+/* end screenshot sizing */
+
+/* portfolio  */
+
+.portfolio-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* flex: 1; */
+}
+
+.portfolio-row> * {
+    padding: 1em;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: .5em;
+    margin: 1em;
+    border: 2px solid white;
+}
+
+.portfolio-item > :first-child {
+    flex: 1;
+}
+
+.portfolio-item > :nth-child(2) {
+    flex: 2;
+}
+
+/* end portfolio */

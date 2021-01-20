@@ -1,24 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 :root {
+    --arrow-max-height-sm: 5vh;
+    --arrow-max-height-lg: 7vh;
+    --content-width-mobile: 85vw;
     --default-font-size: 16px;
     --default-font-family: "Lato", sans-serif;
     --default-font-color: white;
     --heading-font-family: Montserrat;
     --h2-sizing: 1.2em;
-    --h3-sizing: .7em;
-    --paragraph-size: .9em;
-    --arrow-max-height-sm: 5vh;
-    --arrow-max-height-lg: 7vh;
+    --h3-sizing: 1em;
     --margin-xs: .25em;
     --margin-sm: .5em;
     --margin-md: .75em;
     --margin-lg: 1em;
     --margin-xlg: 1.25em;
+    --paragraph-size: .9em;
     --padding-xs: .25em;
     --padding-sm: .5em;
     --padding-md: .75em;
     --padding-lg: 1em;
     --padding-xlg: 1.25em;
-    --content-width-mobile: 85vw;
 }
+
+
