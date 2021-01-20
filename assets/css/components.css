@@ -69,8 +69,8 @@
 }
 
 .icon-xs {
-    height: auto;
-    width: 7vw;
+    height: 5vh;
+    width: auto;
     fill: white;
     color: white;
 }
