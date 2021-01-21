@@ -1,3 +1,20 @@
+/* sticky-nav */
+.sticky-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    transform: translateY(-50%);
+    top:50%;
+    right: 2%;
+    height: 15rem;
+    width: 2rem;
+}
+
+.sticky-nav > .dot {
+    fill:white
+}
+/* end sticky-nav */
 /* arrow  */
 .arrow {
     max-height: var(--arrow-max-height-lg);
@@ -69,7 +86,7 @@
 }
 
 .icon-xs {
-    height: 5vh;
+    height: 4vh;
     width: auto;
     fill: white;
     color: white;
@@ -95,7 +112,7 @@
 
 .icon-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -145,15 +162,19 @@
 }
 
 .portfolio-row> * {
-    padding: 1em;
+    padding: var(--padding-lg);
 }
 
 .portfolio-item {
     display: flex;
     flex-wrap: wrap;
     border-radius: .5em;
-    margin: 1em;
-    border: 2px solid white;
+    margin-bottom: var(--margin-lg);
+    /* border: 2px solid white; */
+}
+
+.portfolio-item > * > * {
+    margin-bottom: var(--margin-md);
 }
 
 .portfolio-item > :first-child {

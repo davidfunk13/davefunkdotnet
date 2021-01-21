@@ -14,7 +14,7 @@ function generateSections() {
         const sectionEnd = sectionStart + heightOfThisElement;
         const sectionTransitionScale = chroma.scale([sectionColor, sectionNextColor]);
         const sectionSelector = _;
-        console.log({ heightOfThisElement, sectionStart, sectionTrigger, sectionEnd });
+
         //set range of color scale to be between the pixel ranges we need it to be depending on the section
         sectionTransitionScale.domain([sectionTrigger, sectionEnd]);
 

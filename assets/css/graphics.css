@@ -30,6 +30,18 @@
     content: url('../svg/mongodb.svg');
 }
 
+.html5 {
+    content: url('../svg/html.svg');
+}
+
+.css3 {
+    content: url('../svg/css3.svg');
+}
+
+.dot {
+    content: url('../svg/dot.svg');
+}
+
 .sr-screenshot-1 {
     content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-2.png');
 }

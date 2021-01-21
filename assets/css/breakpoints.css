@@ -24,12 +24,8 @@
     .arrow {
         max-height: var(--arrow-max-height-sm);
     }
+ 
     .portfolio-item > :first-child {
         flex: unset;
-    }
-
-    .portfolio-item .screenshot {
-        width: auto;
-        max-height: 10em;
     }
 }
