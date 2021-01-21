@@ -6,3 +6,8 @@ changeBackgroundColor();
 window.addEventListener('scroll', function () {
     changeBackgroundColor();
 });
+
+window.addEventListener('resize', function () {
+    generateSections();
+    changeBackgroundColor();
+});
