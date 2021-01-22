@@ -148,6 +148,7 @@
 .screenshot {
     width: 100%;
     height: auto;
+    max-width: 10em;
 }
 
 /* end screenshot sizing */
@@ -162,7 +163,7 @@
 }
 
 .portfolio-row> * {
-    padding: var(--padding-lg);
+    /* padding: var(--padding-lg); */
 }
 
 .portfolio-item {
@@ -183,6 +184,7 @@
 
 .portfolio-item > :first-child {
     flex: 1;
+    padding-right: 1em;
 }
 
 .portfolio-item > :nth-child(2) {

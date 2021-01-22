@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 :root {
     --arrow-max-height-sm: 5vh;
     --arrow-max-height-lg: 7vh;

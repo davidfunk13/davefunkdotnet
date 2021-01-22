@@ -27,6 +27,7 @@ h2 {
     font-size: var(--h2-sizing);
     letter-spacing: 3px;
     margin-bottom: var(--margin-xs);
+    font-weight: 700;
 }
 
 h3 {
