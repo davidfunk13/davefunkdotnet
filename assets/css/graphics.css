@@ -38,6 +38,10 @@
     content: url('../svg/css3.svg');
 }
 
+.gopher {
+    content: url('../svg/gopher.svg');
+}
+
 .dot {
     content: url('../svg/dot.svg');
 }
