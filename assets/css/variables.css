@@ -4,7 +4,7 @@
 :root {
     --arrow-max-height-sm: 5vh;
     --arrow-max-height-lg: 7vh;
-    --content-width-desktop: 45vw;
+    --content-width-desktop: 50vw;
     --content-width-mobile: 85vw;
     --default-font-size: 16px;
     --default-font-family: "Lato", sans-serif;
@@ -18,7 +18,7 @@
     --margin-sm: .5em;
     --margin-md: .75em;
     --margin-lg: 1em;
-    --margin-xlg: 1.25em;
+    --margin-xlg: 1.5em;
     --paragraph-size: .9em;
     --paragraph-size-xlg: 1.4em;
     --padding-xs: .25em;
