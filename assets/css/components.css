@@ -29,15 +29,69 @@
     align-items: center;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-width-card), 1fr));
-    gap: var(--gap-xl);
-    width: 90vw;
+/* Portfolio Carousel Wrapper */
+.portfolio-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     max-width: var(--max-width-content);
-    padding: var(--padding-lg);
-    overflow-y: auto;
-    max-height: 70vh;
+    gap: var(--gap-md);
+}
+
+.portfolio-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 var(--padding-sm);
+    flex-shrink: 0;
+}
+
+.nav-arrow {
+    max-height: var(--arrow-max-height-lg);
+    opacity: 0.8;
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.nav-arrow:hover {
+    opacity: 1;
+}
+
+/* Rotate arrows for horizontal navigation */
+.nav-arrow-left {
+    transform: rotate(90deg);
+}
+
+.nav-arrow-right {
+    transform: rotate(-90deg);
+}
+
+/* Portfolio - Always Carousel */
+.portfolio-grid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--gap-lg);
+    width: 100%;
+    max-width: var(--max-width-content);
+    padding: var(--padding-md);
+    overflow: hidden;
+}
+
+/* Fixed width cards in carousel */
+.portfolio-grid .project-card {
+    flex: 0 0 var(--card-width, 280px);
+    width: var(--card-width, 280px);
+    max-width: 100%;
+    /* Ensure doesn't overflow strictly */
+}
+
+/* Navigation always visible */
+.portfolio-nav {
+    display: flex;
 }
 
 .portfolio-grid::-webkit-scrollbar {
@@ -78,7 +132,7 @@
 }
 
 .project-details {
-    padding: var(--gap-lg);
+    padding: var(--padding-md);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -86,17 +140,17 @@
 }
 
 .project-details h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: var(--margin-sm);
     color: var(--color-white);
 }
 
 .project-details p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
-    margin-bottom: var(--margin-lg);
-    line-height: 1.5;
+    margin-bottom: var(--margin-md);
+    line-height: 1.6;
 }
 
 .stack-row {
@@ -140,8 +194,11 @@
     background: var(--color-glass-bg);
     border: 1px solid var(--color-glass-border);
     border-radius: var(--radius-md);
-    padding: var(--padding-xlg);
+    padding: var(--padding-md);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
 }
 
 .resume-block h3 {
@@ -150,6 +207,18 @@
     letter-spacing: 2px;
     margin-bottom: var(--margin-md);
     color: var(--color-text-subtle);
+    flex-shrink: 0;
+}
+
+/* Skill pills wrapper - fills remaining space and centers content */
+.resume-block .skill-pills {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: var(--gap-sm);
 }
 
 .skill-pills {
@@ -258,13 +327,12 @@
     position: absolute;
     top: var(--padding-lg);
     right: var(--padding-lg);
-    width: 36px;
-    height: 36px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
     color: var(--color-white);
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 300;
     line-height: 1;
     font-family: Arial, sans-serif;
@@ -272,14 +340,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2px;
-    transition: background var(--transition-normal), transform var(--transition-normal);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
     z-index: var(--z-modal-close);
+    opacity: 0.9;
 }
 
 .modal-close:hover {
-    background: rgba(0, 0, 0, 0.9);
-    transform: scale(1.1);
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .carousel {
@@ -318,22 +387,23 @@
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    background: var(--color-button-bg);
-    border: 2px solid var(--color-button-border);
-    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
     color: var(--color-white);
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background var(--transition-normal), transform var(--transition-normal);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
     z-index: var(--z-carousel-btn);
+    opacity: 0.9;
 }
 
 .carousel-btn:hover {
-    background: var(--color-button-bg-hover);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
 }
 
 .carousel-btn.prev {
@@ -364,6 +434,15 @@
 
 .carousel-dot:hover {
     background: var(--color-scrollbar-thumb);
+}
+
+.portfolio-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-sm);
+    padding: var(--padding-md) 0;
+    margin-top: var(--margin-sm);
+    flex-shrink: 0;
 }
 
 .carousel-dot.active {
@@ -441,5 +520,30 @@
 
     .modal-project-info p {
         font-size: 0.85rem;
+    }
+}
+
+/* Carousel Animations */
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

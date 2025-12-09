@@ -62,18 +62,25 @@ function initSwipeNavigation(onSwipeUp, onSwipeDown) {
     const minSwipeDistance = 30;
 
     document.addEventListener('touchstart', (e) => {
+        // Don't start swipe if modal is open
+        if (typeof modalIsOpen !== 'undefined' && modalIsOpen) return;
         touchStartY = e.touches[0].clientY;
         isSwiping = true;
     }, { passive: true });
 
     document.addEventListener('touchmove', (e) => {
         if (!isSwiping) return;
+        // Don't prevent default if modal is open (let modal scroll)
+        if (typeof modalIsOpen !== 'undefined' && modalIsOpen) return;
         e.preventDefault();
     }, { passive: false });
 
     document.addEventListener('touchend', (e) => {
         if (!isSwiping) return;
         isSwiping = false;
+
+        // Don't trigger swipe if modal is open
+        if (typeof modalIsOpen !== 'undefined' && modalIsOpen) return;
 
         const touchEndY = e.changedTouches[0].clientY;
         const swipeDistance = touchStartY - touchEndY;

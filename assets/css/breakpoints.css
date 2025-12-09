@@ -44,8 +44,23 @@
     }
 }
 
+/* Portfolio carousel is now always-carousel controlled by JS */
+/* ==============================================
+   MOBILE BREAKPOINT
+   Only for truly narrow/short screens
+   ============================================== */
 @media screen and (max-height: 700px),
 (max-width: 500px) {
+
+    /* Global lighter text on mobile */
+    body {
+        font-weight: 300;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
     .title-block {
         margin-bottom: var(--margin-sm);
     }
@@ -60,7 +75,7 @@
 
     .resume-container {
         gap: var(--gap-sm);
-        padding: 0 var(--padding-sm);
+        padding: 0 var(--padding-md);
     }
 
     .resume-intro p {
@@ -125,5 +140,37 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+    }
+
+    /* Smaller cards on true mobile */
+    .project-card {
+        width: 260px;
+        max-width: 260px;
+    }
+
+    .project-card img {
+        aspect-ratio: 16/10;
+    }
+
+    .project-details {
+        padding: var(--padding-sm) var(--padding-md);
+    }
+
+    .project-details h3 {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .project-details p {
+        font-size: 0.7rem;
+        font-weight: 300;
+        margin-bottom: var(--margin-sm);
+        line-height: 1.4;
+    }
+
+    .nav-arrow {
+        max-height: 5vh;
     }
 }
