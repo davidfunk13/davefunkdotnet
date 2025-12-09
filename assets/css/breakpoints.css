@@ -2,6 +2,7 @@
     .title-block {
         margin-bottom: var(--title-block-margin-bottom-mobile);
     }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -101,7 +102,10 @@
     .resume-block .skill-pills {
         gap: 0.25rem;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
+        /* Cluster/wrap horizontally */
+        justify-content: center;
+        /* Center clustered items */
         align-items: center;
     }
 
@@ -134,12 +138,14 @@
         font-size: 0.6rem;
     }
 
+    /* Allow headings to wrap */
     h2,
     h3 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
         max-width: 100%;
+        line-height: 1.2;
     }
 
     /* Smaller cards on true mobile */
@@ -171,6 +177,47 @@
     }
 
     .nav-arrow {
-        max-height: 5vh;
+        max-height: 4vh;
+    }
+}
+
+/* Extra skinny screens - prioritize width for content */
+@media screen and (max-width: 380px) {
+    .nav-arrow {
+        max-height: 2.5vh;
+        opacity: 0.6;
+    }
+
+    .portfolio-grid {
+        gap: var(--gap-sm);
+        padding: var(--padding-sm);
+    }
+}
+
+/* Extra short screens - scale down cards to fit */
+@media screen and (max-height: 650px) {
+    .project-card {
+        width: 220px;
+        max-width: 220px;
+    }
+
+    .project-details {
+        padding: var(--padding-xs) var(--padding-sm);
+    }
+
+    .project-details h3 {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+
+    .project-details p {
+        font-size: 0.65rem;
+        margin-bottom: var(--margin-xs);
+        line-height: 1.2;
+    }
+
+    .project-card .skill-pills span {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.3rem;
     }
 }
