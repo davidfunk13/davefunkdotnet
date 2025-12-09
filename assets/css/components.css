@@ -219,6 +219,8 @@
     align-content: center;
     align-items: center;
     gap: var(--gap-sm);
+    width: 100%;
+    /* Ensure chips use full line width */
 }
 
 .skill-pills {
@@ -276,6 +278,37 @@
 @media screen and (max-width: 600px) {
     .resume-grid {
         grid-template-columns: 1fr;
+        gap: var(--gap-sm);
+    }
+
+    .resume-block {
+        flex-direction: row;
+        /* Horizontal layout on mobile */
+        align-items: center;
+        justify-content: space-between;
+        min-height: auto;
+        /* Remove fixed height */
+        padding: var(--padding-sm) var(--padding-md);
+        text-align: left;
+    }
+
+    .resume-block h3 {
+        margin-bottom: 0;
+        margin-right: var(--margin-md);
+        font-size: 0.8rem;
+        /* Slightly smaller title */
+    }
+
+    .resume-block .skill-pills {
+        justify-content: flex-end;
+        /* Align pills to right */
+        flex: 1;
+    }
+
+    .skill-pills span {
+        padding: 4px 8px;
+        /* Tighter pills */
+        font-size: 0.7rem;
     }
 
     .resume-highlights {
