@@ -58,15 +58,24 @@ function changeBackgroundColor() {
 
 function initSwipeNavigation(onSwipeUp, onSwipeDown) {
     let touchStartY = 0;
-    let touchEndY = 0;
-    const minSwipeDistance = 50;
+    let isSwiping = false;
+    const minSwipeDistance = 30;
 
     document.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = true;
     }, { passive: true });
 
+    document.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+        e.preventDefault();
+    }, { passive: false });
+
     document.addEventListener('touchend', (e) => {
-        touchEndY = e.changedTouches[0].screenY;
+        if (!isSwiping) return;
+        isSwiping = false;
+
+        const touchEndY = e.changedTouches[0].clientY;
         const swipeDistance = touchStartY - touchEndY;
 
         if (Math.abs(swipeDistance) > minSwipeDistance) {
