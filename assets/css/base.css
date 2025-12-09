@@ -50,9 +50,9 @@ p {
 }
 
 .border-radius {
-    border-radius: .5em;
+    border-radius: var(--radius-md);
 }
 
 .full {
-    width: 85vw;
+    width: var(--content-width-mobile);
 }

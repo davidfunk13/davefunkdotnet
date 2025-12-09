@@ -71,3 +71,8 @@ window.addEventListener('keydown', (e) => {
         handleScroll('up');
     }
 });
+
+initSwipeNavigation(
+    () => handleScroll('down'),
+    () => handleScroll('up')
+);

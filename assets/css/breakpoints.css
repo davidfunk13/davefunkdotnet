@@ -43,3 +43,67 @@
         width: var(--content-width-desktop);
     }
 }
+
+@media screen and (max-height: 700px),
+(max-width: 500px) {
+    .svg-heading {
+        max-height: 60px;
+    }
+
+    .title-block {
+        margin-bottom: var(--margin-sm);
+    }
+
+    .title-block>* {
+        margin-bottom: var(--margin-sm);
+    }
+
+    .arrow {
+        max-height: 3vh;
+    }
+
+    .resume-container {
+        gap: var(--gap-sm);
+        padding: 0 var(--padding-sm);
+    }
+
+    .resume-intro p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .resume-grid {
+        gap: var(--gap-sm);
+    }
+
+    .resume-block {
+        padding: var(--padding-sm);
+    }
+
+    .resume-block h3 {
+        font-size: 0.7rem;
+        margin-bottom: var(--margin-xs);
+    }
+
+    .skill-pills {
+        gap: 0.25rem;
+    }
+
+    .skill-pills span {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .resume-highlights {
+        gap: var(--gap-lg);
+        margin-top: var(--margin-xs);
+    }
+
+    .highlight-number {
+        font-size: 1.25rem;
+    }
+
+    .highlight-label {
+        font-size: 0.6rem;
+    }
+}

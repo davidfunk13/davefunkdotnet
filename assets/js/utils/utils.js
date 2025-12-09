@@ -55,3 +55,26 @@ function changeBackgroundColor() {
         }
     });
 }
+
+function initSwipeNavigation(onSwipeUp, onSwipeDown) {
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].screenY;
+        const swipeDistance = touchStartY - touchEndY;
+
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                onSwipeUp();
+            } else {
+                onSwipeDown();
+            }
+        }
+    }, { passive: true });
+}

@@ -11,7 +11,7 @@
 }
 
 .sticky-nav>.dot {
-    fill: white
+    fill: var(--color-white);
 }
 
 .arrow {
@@ -31,11 +31,11 @@
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-width-card), 1fr));
+    gap: var(--gap-xl);
     width: 90vw;
-    max-width: 1200px;
-    padding: 1rem;
+    max-width: var(--max-width-content);
+    padding: var(--padding-lg);
     overflow-y: auto;
     max-height: 70vh;
 }
@@ -45,40 +45,40 @@
 }
 
 .portfolio-grid::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    background: var(--color-scrollbar-track);
+    border-radius: var(--radius-sm);
 }
 
 .portfolio-grid::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+    background: var(--color-scrollbar-thumb);
+    border-radius: var(--radius-sm);
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background: var(--color-glass-bg);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow);
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px var(--color-shadow);
+    background: var(--color-glass-bg-hover);
 }
 
 .project-card img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-glass-border);
 }
 
 .project-details {
-    padding: 1.5rem;
+    padding: var(--gap-lg);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -88,30 +88,30 @@
 .project-details h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: white;
+    margin-bottom: var(--margin-sm);
+    color: var(--color-white);
 }
 
 .project-details p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--margin-lg);
     line-height: 1.5;
 }
 
 .stack-row {
     display: flex;
-    gap: 0.75rem;
+    gap: var(--margin-md);
     margin-top: auto;
 }
 
 .resume-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 800px;
+    gap: var(--gap-lg);
+    max-width: var(--max-width-resume);
     width: 90%;
-    padding: 0 1rem;
+    padding: 0 var(--padding-lg);
 }
 
 .resume-intro {
@@ -121,24 +121,24 @@
 .resume-intro p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
 }
 
 .resume-intro strong {
-    color: white;
+    color: var(--color-white);
 }
 
 .resume-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: var(--gap-md);
 }
 
 .resume-block {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.25rem;
+    background: var(--color-glass-bg);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--padding-xlg);
     text-align: center;
 }
 
@@ -146,8 +146,8 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--margin-md);
+    color: var(--color-text-subtle);
 }
 
 .skill-pills {
@@ -158,11 +158,11 @@
 }
 
 .skill-pills span {
-    padding: 0.3rem 0.6rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    padding: var(--padding-xs) var(--padding-sm);
+    background: var(--color-glass-border);
+    border-radius: var(--radius-pill);
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
     font-family: var(--heading-font-family);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -171,29 +171,29 @@
 .resume-highlights {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-top: 0.5rem;
+    gap: var(--gap-xxl);
+    margin-top: var(--margin-sm);
 }
 
 .highlight-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--margin-xs);
 }
 
 .highlight-number {
     font-size: 2rem;
     font-weight: 700;
     font-family: var(--heading-font-family);
-    color: white;
+    color: var(--color-white);
 }
 
 .highlight-label {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-faint);
 }
 
 @media screen and (max-width: 600px) {
@@ -202,7 +202,7 @@
     }
 
     .resume-highlights {
-        gap: 1.5rem;
+        gap: var(--gap-lg);
     }
 
     .highlight-number {
@@ -216,15 +216,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--color-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: var(--z-modal);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    padding: 2rem;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+    padding: var(--gap-xl);
     box-sizing: border-box;
 }
 
@@ -234,7 +234,7 @@
 }
 
 .modal-card {
-    max-width: 900px;
+    max-width: var(--max-width-modal);
     width: 100%;
     max-height: 90vh;
     overflow: hidden;
@@ -248,26 +248,26 @@
 
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: var(--padding-lg);
+    right: var(--padding-lg);
     width: 44px;
     height: 44px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    color: white;
+    background: var(--color-button-bg);
+    border: 2px solid var(--color-button-border);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
     font-size: 1.5rem;
     font-family: var(--heading-font-family);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.2s ease, transform 0.2s ease;
-    z-index: 10;
+    transition: background var(--transition-normal), transform var(--transition-normal);
+    z-index: var(--z-modal-close);
 }
 
 .modal-close:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--color-button-bg-hover);
     transform: scale(1.1);
 }
 
@@ -277,7 +277,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 4rem;
+    padding: var(--gap-xxl) 4rem;
     flex: 1;
     min-height: 0;
     box-sizing: border-box;
@@ -298,7 +298,7 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: opacity 0.15s ease;
+    transition: opacity var(--transition-fast);
 }
 
 .carousel-btn {
@@ -307,91 +307,91 @@
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    color: white;
+    background: var(--color-button-bg);
+    border: 2px solid var(--color-button-border);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.2s ease, transform 0.2s ease;
-    z-index: 5;
+    transition: background var(--transition-normal), transform var(--transition-normal);
+    z-index: var(--z-carousel-btn);
 }
 
 .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--color-button-bg-hover);
     transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-btn.prev {
-    left: 1rem;
+    left: var(--padding-lg);
 }
 
 .carousel-btn.next {
-    right: 1rem;
+    right: var(--padding-lg);
 }
 
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 0;
+    gap: var(--gap-sm);
+    padding: var(--padding-lg) 0;
     flex-shrink: 0;
 }
 
 .carousel-dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    background: var(--color-scrollbar-thumb);
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background var(--transition-normal), transform var(--transition-normal);
 }
 
 .carousel-dot:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--color-scrollbar-thumb);
 }
 
 .carousel-dot.active {
-    background: white;
+    background: var(--color-white);
     transform: scale(1.2);
 }
 
 .modal-project-info {
-    padding: 1.5rem 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--gap-lg) var(--gap-xl);
+    border-top: 1px solid var(--color-glass-border);
     flex-shrink: 0;
 }
 
 .modal-project-info h2 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
+    margin-bottom: var(--margin-sm);
+    color: var(--color-white);
 }
 
 .modal-project-info p {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-muted);
     line-height: 1.5;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--margin-md);
 }
 
 .modal-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--gap-sm);
 }
 
 .tech-tag {
-    padding: 0.35rem 0.7rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
+    padding: var(--padding-xs) var(--padding-md);
+    background: var(--color-glass-border);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-lg);
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
     font-family: var(--heading-font-family);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -399,7 +399,7 @@
 
 @media screen and (max-width: 600px) {
     .carousel {
-        padding: 3rem 4rem;
+        padding: var(--gap-xxl) 4rem;
     }
 
     .carousel-btn {
@@ -409,7 +409,7 @@
     }
 
     .modal-project-info {
-        padding: 1rem 1.5rem;
+        padding: var(--padding-lg) var(--gap-lg);
     }
 
     .modal-project-info h2 {
