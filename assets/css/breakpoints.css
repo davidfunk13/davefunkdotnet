@@ -180,6 +180,14 @@
         max-height: 4vh;
     }
 
+    .portfolio-carousel-wrapper {
+        gap: 0.25rem;
+    }
+
+    .portfolio-nav {
+        padding: 0;
+    }
+
     .portfolio-grid {
         padding: var(--padding-sm) var(--padding-xs);
     }
