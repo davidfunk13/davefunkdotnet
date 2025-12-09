@@ -150,8 +150,8 @@
 
     /* Smaller cards on true mobile */
     .project-card {
-        width: 260px;
-        max-width: 260px;
+        width: 82vw;
+        max-width: 360px;
     }
 
     .project-card img {
@@ -179,6 +179,10 @@
     .nav-arrow {
         max-height: 4vh;
     }
+
+    .portfolio-grid {
+        padding: var(--padding-sm) var(--padding-xs);
+    }
 }
 
 /* Extra skinny screens - prioritize width for content */
@@ -190,7 +194,7 @@
 
     .portfolio-grid {
         gap: var(--gap-sm);
-        padding: var(--padding-sm);
+        padding: var(--padding-sm) var(--padding-xs);
     }
 }
 
