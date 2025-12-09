@@ -1,63 +1,3 @@
-.user {
-    content: url('../svg/user.svg');
-}
-
-.nodejs {
-    content: url('../svg/nodejs.svg');
-}
-
-.react {
-    content: url('../svg/react.svg');
-}
-
-.javascript {
-    content: url('../svg/javascript.svg');
-}
-
-.typescript {
-    content: url('../svg/typescript.svg');
-}
-
-.graphql {
-    content: url('../svg/graphql.svg');
-}
-
-.mysql {
-    content: url('../svg/mysql.svg');
-}
-
-.mongodb {
-    content: url('../svg/mongodb.svg');
-}
-
-.html5 {
-    content: url('../svg/html.svg');
-}
-
-.css3 {
-    content: url('../svg/css3.svg');
-}
-
-.gopher {
-    content: url('../svg/gopher.svg');
-}
-
-.dot {
-    content: url('../svg/dot.svg');
-}
-
-.sr-screenshot-1 {
-    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-2.png');
-}
-
-.sr-screenshot-2 {
-    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-3.png');
-}
-
-.sr-screenshot-3 {
-    content: url('../img/screenshots/sr-tracker/sr-tracker-screenshot-4.png');
-}
-
 .svg-heading rect {
     stroke: white;
     fill: transparent;
@@ -68,7 +8,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    transition: all 2s;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .svg-heading text {
@@ -80,6 +20,6 @@
     font-family: Montserrat;
     text-transform: uppercase;
     font-size: 8.5em;
-    width: 100%;
-    height: 100%;
+    text-anchor: middle;
+    dominant-baseline: middle;
 }

@@ -1,8 +1,7 @@
-//on page load we create our sections from the markup.
 function generateSections() {
-    sectionSelectors.forEach((_, i) => {
+    sectionCollection.length = 0;
 
-        //implement random colors by randomizing array itself, then padding those in.
+    sectionSelectors.forEach((_, i) => {
         const sectionNumber = i + 1;
         let titleToggle = false;
         const heightOfThisElement = _.getBoundingClientRect().height;
@@ -14,8 +13,10 @@ function generateSections() {
         const sectionEnd = sectionStart + heightOfThisElement;
         const sectionTransitionScale = chroma.scale([sectionColor, sectionNextColor]);
         const sectionSelector = _;
+        const svg = _.querySelector('svg.svg-heading');
+        const rect = _.querySelector('rect.svg-heading.rect');
+        const text = _.querySelector('text.svg-heading.text');
 
-        //set range of color scale to be between the pixel ranges we need it to be depending on the section
         sectionTransitionScale.domain([sectionTrigger, sectionEnd]);
 
         const newSection = {
@@ -27,7 +28,10 @@ function generateSections() {
             sectionStart,
             sectionEnd,
             sectionTransitionScale,
-            sectionSelector
+            sectionSelector,
+            svg,
+            rect,
+            text
         };
 
         sectionCollection.push(newSection);

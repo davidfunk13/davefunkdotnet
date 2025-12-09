@@ -1,22 +1,49 @@
-// get the distance from the top of the document to the top of an element in pixels;
 function getElementY(el) {
     var bodyRect = document.body.getBoundingClientRect();
     var elemRect = el.getBoundingClientRect();
-
     return elemRect.top - bodyRect.top;
 }
 
-// //this function will perform a linear transform of two mapped sets of integers based off current Y position.
-// //used to manipulate stroke-dashoffset values to draw svg in and out relative to scroll.
 function drawSvg(t, a, b, c, d) {
     return c + ((d - c) / (b - a)) * (t - a);
 }
 
-// this function will be called by an event listener boud to scrolling.
+function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+}
+
+function smoothScrollTo(target, duration) {
+    const start = window.pageYOffset || window.scrollY;
+    const change = target - start;
+    let currentTime = 0;
+    const increment = 20;
+
+    function animateScroll() {
+        currentTime += increment;
+        const val = easeInOutCubic(currentTime, start, change, duration);
+        window.scrollTo(0, val);
+        if (currentTime < duration) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+    animateScroll();
+}
+
 function changeBackgroundColor() {
     const currentY = window.pageYOffset || window.scrollY;
+    const triggerY = currentY + (window.innerHeight * 0.6);
 
-    sectionCollection.map((section) => {
+    sectionCollection.forEach((section, index) => {
+        const hasEntered = triggerY >= section.sectionStart;
+        const hasLeft = currentY > section.sectionEnd;
+        const isActive = (triggerY >= section.sectionStart) && (currentY < section.sectionEnd);
+
+        if (section.rect) section.rect.style.strokeDashoffset = isActive ? 0 : 2500;
+        if (section.text) section.text.style.strokeDashoffset = isActive ? 0 : 2500;
+
         if (currentY <= section.sectionEnd) {
             if (currentY >= section.sectionTrigger) {
                 return document.body.style.backgroundColor = section.sectionTransitionScale(currentY);
@@ -27,4 +54,4 @@ function changeBackgroundColor() {
             }
         }
     });
-};
+}

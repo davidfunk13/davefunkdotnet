@@ -1,194 +1,422 @@
-/* sticky-nav */
 .sticky-nav {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     position: fixed;
     transform: translateY(-50%);
-    top:50%;
+    top: 50%;
     right: 2%;
     height: 15rem;
     width: 2rem;
 }
 
-.sticky-nav > .dot {
-    fill:white
+.sticky-nav>.dot {
+    fill: white
 }
-/* end sticky-nav */
-/* arrow  */
+
 .arrow {
     max-height: var(--arrow-max-height-lg);
 }
 
-/* end arrow */
-
-/* page section */
 .section {
     min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* end page section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 90vw;
+    max-width: 1200px;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 70vh;
+}
 
-/* content container */
-.content {
+.portfolio-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.portfolio-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.portfolio-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.content>* {
-    margin-bottom: var(--margin-xlg);
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.content>.content>* {
-    margin-bottom: var(--margin-xs);
-}
-
-.content>.content {
-    margin-bottom: var(--margin-sm);
-}
-
-/* end content container */
-
-/* UI card item */
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card.reverse {
-    flex-direction: row-reverse;
-}
-
-.card>* {
-    margin: var(--margin-xs);
-    flex: 3;
-}
-
-.card>*:first-child {
-    width: 33%;
-    flex: 1;
-}
-
-/* end ui card item */
-
-/* icons */
-.icon {
-    height: auto;
-    width: 15vw;
-    fill: white;
-    color: white;
-}
-
-.icon-xs {
-    height: 4vh;
-    width: auto;
-    fill: white;
-    color: white;
-}
-
-.icon-sm {
-    height: auto;
-    width: 12vw;
-    fill: white;
-    color: white;
-}
-
-.icon-lg {
-    height: auto;
-    width: 25vw;
-    fill: white;
-    color: white;
-}
-
-/* end icons */
-
-/* icon row */
-
-.icon-row {
-    display: flex;
-    justify-content: space-between;
+.project-card img {
     width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.icon-row>* {
-    margin: var(--margin-xs);
+.project-details {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.icon-row>.third {
-    width: 33%;
+.project-details h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
-/* end icon row */
+.project-details p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
 
-/* icon with label column horiz vert center */
-.icon-with-label>strong {
+.stack-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 90%;
+    padding: 0 1rem;
+}
+
+.resume-intro {
     text-align: center;
 }
 
-.icon-with-label {
+.resume-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-intro strong {
+    color: white;
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.resume-block {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.resume-block h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.skill-pills span {
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--heading-font-family);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resume-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 0.5rem;
+}
+
+.highlight-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.25rem;
 }
 
-.icon-with-label> :first-child {
-    margin-bottom: var(--margin-sm);
+.highlight-number {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--heading-font-family);
+    color: white;
 }
 
-/* end icon with label column horiz vert center */
+.highlight-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
 
-/* screenshot sizing */
+@media screen and (max-width: 600px) {
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
 
-.screenshot {
+    .resume-highlights {
+        gap: 1.5rem;
+    }
+
+    .highlight-number {
+        font-size: 1.5rem;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    max-width: 10em;
-}
-
-/* end screenshot sizing */
-
-/* portfolio  */
-
-.portfolio-row {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    max-width: 900px;
     width: 100%;
-    /* flex: 1; */
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.portfolio-row> * {
-    /* padding: var(--padding-lg); */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    font-family: var(--heading-font-family);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
 }
 
-.portfolio-item {
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    flex: 1;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+.carousel-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.15s ease;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.modal-project-info {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.modal-project-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.modal-project-info p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.modal-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    border-radius: .5em;
-    margin-bottom: var(--margin-lg);
-    /* border: 2px solid white; */
+    gap: 0.5rem;
 }
 
-.portfolio-item > * > * {
-    margin-bottom: var(--margin-md);
+.tech-tag {
+    padding: 0.35rem 0.7rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--heading-font-family);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.portfolio-item .icon-row {
-    justify-content: flex-start;
-}
+@media screen and (max-width: 600px) {
+    .carousel {
+        padding: 3rem 4rem;
+    }
 
-.portfolio-item > :first-child {
-    flex: 1;
-    padding-right: 1em;
-}
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 
-.portfolio-item > :nth-child(2) {
-    flex: 2;
-}
+    .modal-project-info {
+        padding: 1rem 1.5rem;
+    }
 
-/* end portfolio */
+    .modal-project-info h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal-project-info p {
+        font-size: 0.85rem;
+    }
+}
