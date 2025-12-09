@@ -36,7 +36,7 @@ function scrollToSection(index) {
 
     setTimeout(() => {
         isScrolling = false;
-    }, 1250);
+    }, 600);
 }
 
 window.addEventListener('scroll', function () {

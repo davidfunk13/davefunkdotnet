@@ -66,6 +66,7 @@
     .resume-intro p {
         font-size: 0.85rem;
         line-height: 1.4;
+        font-weight: 300;
     }
 
     .resume-grid {
@@ -81,11 +82,26 @@
         margin-bottom: var(--margin-xs);
     }
 
-    .skill-pills {
+    /* Resume blocks: stack chips vertically on mobile */
+    .resume-block .skill-pills {
         gap: 0.25rem;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .skill-pills span {
+    .resume-block .skill-pills span {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    /* Project cards: keep chips wrapping normally */
+    .project-card .skill-pills {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .project-card .skill-pills span {
         font-size: 0.6rem;
         padding: 0.2rem 0.4rem;
     }
