@@ -138,9 +138,11 @@
         font-size: 0.6rem;
     }
 
-    /* Allow headings to wrap */
-    h2,
-    h3 {
+    /* Allow headings to wrap - scoped to main content to avoid modal regression */
+    .title-block h2,
+    .title-block h3,
+    .resume-block h3,
+    .project-details h3 {
         white-space: normal;
         overflow: visible;
         text-overflow: clip;
@@ -181,11 +183,14 @@
     }
 
     .portfolio-carousel-wrapper {
-        gap: 0.25rem;
+        gap: 0;
     }
 
     .portfolio-nav {
         padding: 0;
+        flex: 1;
+        /* Grow to fill available space */
+        justify-content: center;
     }
 
     .portfolio-grid {
