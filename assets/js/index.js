@@ -32,7 +32,7 @@ function scrollToSection(index) {
     isScrolling = true;
     const targetY = sectionCollection[index].sectionStart;
 
-    smoothScrollTo(targetY, 1500);
+    smoothScrollTo(targetY, 600);
 
     setTimeout(() => {
         isScrolling = false;

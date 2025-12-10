@@ -148,6 +148,9 @@
         text-overflow: clip;
         max-width: 100%;
         line-height: 1.2;
+        /* Ensure long emails wrap */
+        word-break: break-all;
+        overflow-wrap: break-word;
     }
 
     /* Smaller cards on true mobile */

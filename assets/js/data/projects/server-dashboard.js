@@ -3,6 +3,7 @@ registerProject('server-dashboard', {
     cardTitle: 'Server Dashboard',
     cardDescription: 'A unified cross-platform control center for managing self-hosted services and home labs. Built with Flutter, it delivers a high-performance embedded browsing experience natively on Linux, Windows, macOS, and Android.',
     title: 'Server Dashboard',
+    repoUrl: 'https://github.com/davidfunk13/server-dashboard',
     techStack: ['Flutter', 'Dart', 'Linux', 'Windows', 'macOS', 'Android'],
     slides: [
         {

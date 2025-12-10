@@ -2,7 +2,7 @@ let currentSlide = 0;
 let currentProject = null;
 let modalIsOpen = false;
 
-let modalOverlay, modalCard, modalImage, modalTitle, modalDescription, modalTechStack, carouselDots;
+let modalOverlay, modalCard, modalImage, modalTitle, modalDescription, modalTechStack, carouselDots, modalRepoLink;
 
 function initModal() {
     modalOverlay = document.getElementById('modal-overlay');
@@ -11,6 +11,7 @@ function initModal() {
     modalTitle = document.getElementById('modal-title');
     modalDescription = document.getElementById('modal-description');
     modalTechStack = document.getElementById('modal-tech-stack');
+    modalRepoLink = document.getElementById('modal-repo-link');
     carouselDots = document.getElementById('carousel-dots');
 
     document.querySelectorAll('.project-card[data-project-id]').forEach(card => {
@@ -47,6 +48,13 @@ function openModal(projectId) {
     modalTechStack.innerHTML = currentProject.techStack
         .map(tech => `<span class="tech-tag">${tech}</span>`)
         .join('');
+
+    if (currentProject.repoUrl) {
+        modalRepoLink.href = currentProject.repoUrl;
+        modalRepoLink.style.display = 'inline-flex';
+    } else {
+        modalRepoLink.style.display = 'none';
+    }
 
     carouselDots.innerHTML = currentProject.slides
         .map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}"></button>`)

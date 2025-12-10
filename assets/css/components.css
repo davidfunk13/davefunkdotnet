@@ -27,6 +27,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Fix Firefox swipe: disable browser touch actions so our JS listener works */
+    touch-action: none;
 }
 
 /* Portfolio Carousel Wrapper */
@@ -519,6 +521,28 @@
     font-family: var(--heading-font-family);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.modal-repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    margin-top: var(--margin-md);
+    padding: var(--padding-sm) var(--padding-lg);
+    background: var(--color-button-bg);
+    border: 1px solid var(--color-button-border);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background var(--transition-normal), transform var(--transition-normal);
+    cursor: pointer;
+}
+
+.modal-repo-link:hover {
+    background: var(--color-button-bg-hover);
+    transform: translateY(-2px);
 }
 
 @media screen and (max-width: 600px) {
