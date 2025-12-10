@@ -147,10 +147,16 @@
         overflow: visible;
         text-overflow: clip;
         max-width: 100%;
+        overflow: visible;
+        text-overflow: clip;
+        max-width: 100%;
         line-height: 1.2;
-        /* Ensure long emails wrap */
-        word-break: break-all;
-        overflow-wrap: break-word;
+    }
+
+    /* Contact Email: scaling font to fit on one line */
+    #section4 h2 {
+        white-space: nowrap;
+        font-size: clamp(0.9rem, 6vw, 2rem);
     }
 
     /* Smaller cards on true mobile */
